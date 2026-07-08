@@ -2,86 +2,49 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
 }
 
 /* Custom global overrides */
 body {
   font-family: var(--font-sans);
-  background: radial-gradient(circle at top right, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 1) 100%);
-  overflow-y: overlay;
+  background-color: #f8f9fa;
+  color: #0f172a;
+  overflow-y: scroll;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-}
-
-/* Custom Webkit scrollbar for premium feel */
+/* Clean scrollbar for light theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.3);
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.15);
-  border-radius: 9999px;
-  border: 2px solid rgba(15, 23, 42, 1);
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 2px solid #f8f9fa;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.3);
+  background: #94a3b8;
 }
 
-/* Glassmorphism card utility */
+/* Flat panel styling instead of dark glassmorphic */
 .glass-panel {
-  background: rgba(30, 41, 59, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(30, 41, 59, 0.6);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
-}
-
-/* Pulse Glow indicators */
-@keyframes pulse-glow-green {
-  0%, 100% {
-    box-shadow: 0 0 4px rgba(34, 197, 94, 0.2);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
-    transform: scale(1.1);
-  }
-}
-
-@keyframes pulse-glow-red {
-  0%, 100% {
-    box-shadow: 0 0 4px rgba(239, 68, 68, 0.2);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
-    transform: scale(1.1);
-  }
-}
-
+/* Clean solid status dots instead of pulsing glows */
 .glow-up {
-  animation: pulse-glow-green 2s infinite ease-in-out;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
 }
 
 .glow-down {
-  animation: pulse-glow-red 2s infinite ease-in-out;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
+
