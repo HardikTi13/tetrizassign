@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+model Url {
+  id           String        @id @default(uuid())
+  url          String        @unique
+  createdAt    DateTime      @default(now())
+  healthChecks HealthCheck[]
+}
+
+model HealthCheck {
+  id           String   @id @default(uuid())
+  urlId        String
+  url          Url      @relation(fields: [urlId], references: [id], onDelete: Cascade)
+  statusCode   Int?
+  responseTime Int
+  isUp         Boolean
+  checkedAt    DateTime @default(now())
+}
