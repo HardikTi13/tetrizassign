@@ -11,7 +11,7 @@ graph TD
     User[Web Client] -->|React SPA| FE[Frontend Container - Vite/Dev]
     User -->|HTTP Requests| BE[Backend Container - Express]
     BE -->|REST API & Cron| DB[(Database Container - PostgreSQL)]
-    BE -->|HTTP Health Checks (1m)| Net[Internet Target Web Servers]
+    BE -->|HTTP Health Checks - 1m| Net[Internet Target Web Servers]
 ```
 
 - **Frontend**: A sleek dashboard using Tailwind CSS v4 and responsive design. Features a live 5-second countdown refresh, live status widgets, a timeline check visualization, and a URL history modal.
